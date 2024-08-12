@@ -8,7 +8,7 @@
 git clone https://github.com/douglarek/luci-app-homeproxy.git package/luci-app-homeproxy
 
 #添加bypass插件
-git clone -b bypass https://github.com/shidahuilang/openwrt-package.git package/luci-app-bypass
+#git clone -b bypass https://github.com/shidahuilang/openwrt-package.git package/luci-app-bypass
 
 
 #添加CPU使用率、编译作者、固件下载地址
@@ -24,13 +24,13 @@ sed -i '9a\msgstr "固件出处"' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i '10a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 # 后台IP设置
-export Ipv4_ipaddr="192.168.1.1"             # 修改openwrt后台地址(填0为关闭)
+export Ipv4_ipaddr="192.168.2.99"             # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"          # IPv4 子网掩码（默认：255.255.255.0）(填0为不作修改)
 export Op_name="OpenWrt-GXNAS"               # 修改主机名称为OpenWrt-123(填0为不作修改)
 
 # 内核和系统分区大小(不是每个机型都可用)
-export Kernel_partition_size="32"            # 内核分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般16,数值以MB计算，填0为不作修改),如果你不懂就填0
-export Rootfs_partition_size="960"           # 系统分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般300左右,数值以MB计算，填0为不作修改),如果你不懂就填0
+export Kernel_partition_size="90"            # 内核分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般16,数值以MB计算，填0为不作修改),如果你不懂就填0
+export Rootfs_partition_size="4096"           # 系统分区大小,每个机型默认值不一样 (填写您想要的数值,默认一般300左右,数值以MB计算，填0为不作修改),如果你不懂就填0
 
 # 默认主题设置
 export Mandatory_theme="argon"               # 将bootstrap替换您需要的主题为必选主题(可自行更改您要的,源码要带此主题就行,填写名称也要写对) (填写主题名称,填0为不作修改)
@@ -72,7 +72,7 @@ export AdGuardHome_Core="1"                  # 编译固件时自动增加AdGuar
 export Disable_NaiveProxy="1"                # 因个别源码的分支不支持编译NaiveProxy,不小心选择了就编译错误了,为减少错误,打开这个选项后,就算选择了NaiveProxy也会把NaiveProxy干掉不进行编译的(1为启用命令,填0为不作修改)
 
 # 开启NTFS格式盘挂载
-export Automatic_Mount_Settings="0"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
+export Automatic_Mount_Settings="1"          # 编译时加入开启NTFS格式盘挂载的所需依赖(1为启用命令,填0为不作修改)
 
 # 去除网络共享(autosamba)
 export Disable_autosamba="0"                 # 去掉源码默认自选的luci-app-samba或luci-app-samba4(1为启用命令,填0为不作修改)
